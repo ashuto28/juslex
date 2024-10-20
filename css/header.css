@@ -1,6 +1,6 @@
 /* Header Styling */
 .navbar {
-    background-color: #2d2d2d; /* Darker, more premium background color */
+    background-color: #2d2d2d;
     color: white;
     padding: 15px 0;
     position: sticky;
@@ -14,15 +14,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
-    font-family: 'Lora', serif; /* Serif font for elegance */
+    font-family: 'Lora', serif;
     font-size: 2rem;
     color: white;
     text-decoration: none;
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 30px;
@@ -36,48 +38,47 @@
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    padding: 10px;
+    font-size: 1.2rem;
+    padding: 20px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFD700; /* Gold hover effect for premium feel */
+    color: #FFD700;
     border-bottom: 2px solid #FFD700;
 }
 
 /* Hamburger Menu */
 .hamburger {
-    display: none; /* Hidden by default */
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    position: sticky;
 }
 
 /* Mobile Header - Responsive Adjustments */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Hamburger menu appears on mobile */
+    }
+
     .nav-links {
-        display: none; /* Hide the nav links initially on mobile */
+        display: none; /* Initially hidden */
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 0;
         background-color: #2d2d2d;
         width: 100%;
-        padding: 20px;
+        padding: 0%;
     }
 
-    .navbar .container {
-        justify-content: space-between;
+    .nav-links.active {
+        display: flex; /* Shows nav links when active class is added */
     }
 
-    /* Show hamburger menu only on mobile */
-    .hamburger {
-        display: block; /* Visible only on mobile */
-        font-size: 1.5rem;
-        color: white;
-        cursor: pointer;
-    }
-
-    /* Toggle the visibility of the navigation links */
-    .hamburger.active + .nav-links {
-        display: flex; /* Show nav links when hamburger is clicked */
+    .nav-links li {
+        margin-bottom: 10px; /* Add space between nav items */
     }
 }

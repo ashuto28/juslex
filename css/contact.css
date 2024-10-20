@@ -1,9 +1,9 @@
-/* General Styling */
+/* General Body Styling */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #2c3e50, #34495e); /* Premium gradient background */
+    background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
@@ -14,175 +14,125 @@ body {
     padding: 20px;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(to bottom, #2c3e50, #34495e), url('https://images.unsplash.com/photo-1504386106331-3e4e71712b38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Header */
+.navbar {
+    background-color: #2d2d2d;
     color: white;
-    position: relative;
-}
-
-.hero .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
+    padding: 15px 0;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero-text {
-    position: relative;
-    max-width: 600px;
+/* Contact Us Section */
+.contact-us {
+    padding: 60px 0;
+    background-color: #fff;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+.contact-us h1 {
+    font-size: 3rem;
+    font-family: 'Lora', serif;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contact-info p {
+    text-align: center;
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-}
-
-.hero-image {
-    position: relative;
-    max-width: 350px;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    background-color: #f9f9f9;
+.contact-details {
     text-align: center;
-    padding: 60px 0;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
 }
 
-.why-choose-us h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+.contact-details strong {
+    color: #2c3e50;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #1a252f;
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.map-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     font-family: 'Lora', serif;
     color: #333;
 }
 
-.reasons {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    text-align: left;
-}
-
-.reason {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    gap: 15px;
-}
-
-.reason img {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-}
-
-.reason div {
-    flex-grow: 1;
-}
-
-.reason h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.reason p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Responsive Layout for Mobile */
-@media (max-width: 768px) {
-    .reasons {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .reason {
-        width: 100%;
-        text-align: center;
-        flex-direction: column;
-    }
-
-    .reason img {
-        margin-bottom: 15px;
-    }
-}
-
-/* Recent Case Successes Section */
-.case-successes {
-    background-color: #f4f4f4;
-    padding: 60px 0;
-}
-
-.case-successes h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.cases-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-}
-
-.case-item {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    text-align: center;
-}
-
-.case-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
-    background-color: #1a1a1a;
+    background-color: #2d2d2d;
     color: white;
-    padding: 20px 0;
     text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
-footer p {
-    margin: 0;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 15px;
+    }
+
+    .contact-us h1 {
+        font-size: 2.5rem;
+    }
+
+    .map-container iframe {
+        height: 300px; /* Reduce map height on smaller screens */
+    }
 }
