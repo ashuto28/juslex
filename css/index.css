@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffffff, #e5e5e5); /* Soft gradient for the body */
+    background: linear-gradient(to right, #ffffff, #e5e5e5);
     color: #333;
     line-height: 1.6;
 }
@@ -14,34 +14,24 @@ body {
     padding: 20px;
 }
 
-/* Hero Section with Softer Background Colors */
+/* Hero Section with Background Image */
 .hero {
-    background: linear-gradient(to bottom, #f5f5f5, #eaeaea); /* Light, neutral gradient */
+    background-image: url('../images/background.webp'); /* Make sure this is the correct path */
+    background-size: cover;
+    background-position: center;
     height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: #333; /* Darker text for better contrast */
+    justify-content: center;
+    color: white;
+    text-align: center;
     position: relative;
-}
-
-.hero .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-text {
-    position: relative;
-    max-width: 600px;
-    opacity: 0; /* Hidden initially */
-    animation: fadeIn 2s ease-out forwards; /* Smooth fade-in effect */
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    font-weight: 700;
     margin-bottom: 20px;
+    
 }
 
 .hero p {
@@ -49,105 +39,43 @@ body {
     margin-bottom: 30px;
 }
 
-.hero-image {
-    position: relative;
-    max-width: 350px;
-    overflow: hidden;
-    margin: 0 auto;
-    transition: transform 0.3s ease-in-out; /* Add smooth hover effect */
+.hero a {
+    color: white;
+    background-color: #0056b3;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.hero-image img {
+.hero a:hover {
+    background-color: #004080;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
     width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-/* Hover effect: Zoom image slightly */
-.hero-image:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    background-color: #f9f9f9;
-    text-align: center;
-    padding: 60px 0;
-}
-
-.why-choose-us h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    font-family: 'Lora', serif;
-    color: #333;
-}
-
-.reasons {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
     text-align: left;
 }
 
-.reason {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    gap: 15px;
-}
-
-.reason img {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-}
-
-.reason div {
-    flex-grow: 1;
-}
-
-.reason h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.reason p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Footer */
-footer {
-    background-color: #2d2d2d;
+table thead {
+    background-color: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
 }
 
-footer p {
-    margin: 0;
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
 }
 
-/* Keyframes for smooth text animation */
-@keyframes fadeIn {
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Responsive Adjustments for Mobile */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -156,18 +84,41 @@ footer p {
         font-size: 1.1rem;
     }
 
-    .hero-image {
-        margin-top: 20px;
-        max-width: 200px;
+    table, thead, tbody, th, td, tr {
+        display: block;
     }
 
-    .reasons {
-        flex-direction: column;
-        gap: 20px;
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
     }
 
-    .case-item {
-        width: 100%;
-        margin-bottom: 20px;
+    tr {
+        margin-bottom: 15px;
     }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
